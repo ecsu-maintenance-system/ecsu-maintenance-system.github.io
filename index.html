@@ -113,8 +113,7 @@
 									<h2>Progress of Completion</h2>
 									<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
 									posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
-								<!--<div id="container" style="width:100%; height:400px;"></div>-->
-                                    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+								<div id="container" style="width:100%; height:400px;"></div>
 							</section>
 
 						<!-- Get Started -->
@@ -178,32 +177,54 @@
                 
             <script>
                 
-                $(function () { 
-    var myChart = Highcharts.chart('container', {
-        chart: {
-            type: 'line'
-        },
+               $(function () {
+    $('#container').highcharts({
         title: {
-            text: 'ECSU-OMTS'
+            text: 'ECSU-OMTS',
+            x: -20 //center
+        },
+        subtitle: {
+            //text: 'Source: WorldClimate.com',
+            x: -20
         },
         xAxis: {
-            categories: ['1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7', 'Week 8', 'Week 9', 'Week 10']
+            categories: ['Task 1', 'Task 2', 'Task 3', 'Task 4', 'Task 5', 'Task 6',
+                'Task 7', 'Task 8', 'Task 9', 'Task 10', 'Task 11', 'Task 12']
         },
         yAxis: {
             title: {
-                text: 'Fruit eaten'
-            }
+                text: 'Days'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: '°C'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
         },
         series: [{
-            name: 'Jane',
-            data: [1, 0, 4]
+            name: 'Sprint #1',
+            data: [0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
         }, {
-            name: 'John',
-            data: [5, 7, 3]
+            name: 'Sprint #2',
+            //data: [0, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+        }, {
+            name: 'Sprint #3',
+            //data: [0, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+        }, {
+            name: 'Sprint #4',
+            //data: [0, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
         }]
     });
-});
-                
+});           
             </script>
 
 	</body>
